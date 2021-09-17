@@ -1,0 +1,10 @@
+<header><h1>Home</h1></header>
+
+<div *ngIf="onPageLoad() == false; else elseBlock">
+<main><button type="button" (click)="this.spotifyService.requestAuthorization();" class="login-button">Login</button></main>
+</div>
+<ng-template #elseBlock>  
+    <input #searchBox id="search-box" />   
+    <button type="button" (click)="this.showArtistName(searchBox.value);" class="login-button">Show</button>
+    <div><span class="badge">{{artistName}}</span></div>
+</ng-template>
